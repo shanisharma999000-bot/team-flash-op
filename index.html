@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Flash OP</title>
+  
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
+    // Yahan apna Pixel ID dalein (e.g., '123456789012345')
+    fbq('init', 'YOUR_PIXEL_ID_HERE'); 
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #120904;
+      background: radial-gradient(circle at center, #2e1405 0%, #100602 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: #ffffff;
+    }
+
+    .card {
+      background: rgba(255, 120, 30, 0.08);
+      border: 1px solid rgba(255, 140, 50, 0.25);
+      border-radius: 28px;
+      padding: 30px 20px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 120, 30, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 20px;
+    }
+
+    .avatar-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      right: -4px;
+      bottom: -4px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffcc00, #ff6600);
+      box-shadow: 0 0 20px rgba(255, 170, 0, 0.6);
+      z-index: 1;
+    }
+
+    .avatar {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      z-index: 2;
+    }
+
+    .status-badge {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(180deg, #ffd86b 0%, #f1a80a 100%);
+      color: #1a1a1a;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 3;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      background-color: #ffffff;
+      border-radius: 50%;
+    }
+
+    .title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #72ff93;
+      margin-top: 15px;
+      margin-bottom: 6px;
+      text-shadow: 0 0 10px rgba(114, 255, 147, 0.3);
+    }
+
+    .subtitle {
+      color: #ddb896;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .join-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(180deg, #ffe082 0%, #ffb300 100%);
+      color: #000000;
+      text-decoration: none;
+      font-size: 19px;
+      font-weight: 800;
+      padding: 16px 20px;
+      border-radius: 16px;
+      margin-bottom: 25px;
+      box-shadow: 0 6px 20px rgba(255, 179, 0, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .join-btn:active {
+      transform: scale(0.98);
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      color: #8c7365;
+      margin-bottom: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .timer-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+
+    .timer-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 10px 5px;
+    }
+
+    .timer-number {
+      font-size: 22px;
+      font-weight: 800;
+      color: #72ff93;
+      margin-bottom: 4px;
+    }
+
+    .timer-unit {
+      font-size: 9px;
+      color: #a38c7e;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .disclaimer {
+      font-size: 11px;
+      color: #92796c;
+      line-height: 1.5;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="avatar-wrapper">
+      <img src="https://i.postimg.cc/8cbKnVdq/IMG-20261008-222734-576.jpg" alt="Team Flash OP" class="avatar">
+      <div class="status-badge">
+        <span class="status-dot"></span> ONLINE
+      </div>
+    </div>
+
+    <h1 class="title">Team Flash OP</h1>
+    <p class="subtitle">Tips & Tricks</p>
+
+    <!-- Join Telegram Button -->
+    <a href="https://t.me/+FIsPpfyPJb03ZTE1" class="join-btn" onclick="fbq('track', 'Lead');">
+      <span>✈️</span> Join Telegram
+    </a>
+
+    <div class="section-label">READY TO JOIN</div>
+
+    <div class="timer-container">
+      <div class="timer-box">
+        <div class="timer-number" id="days">00</div>
+        <div class="timer-unit">DAYS</div>
+      </div>
+      <div class="timer-box">
+        <div class="timer-number" id="hours">00</div>
+        <div class="timer-unit">HOURS</div>
+      </div>
+      <div class="timer-box">
+        <div class="timer-number" id="mins">00</div>
+        <div class="timer-unit">MINS</div>
+      </div>
+      <div class="timer-box">
+        <div class="timer-number" id="secs">02</div>
+        <div class="timer-unit">SECS</div>
+      </div>
+    </div>
+
+    <p class="disclaimer">
+      <strong>Disclaimer:</strong> This page is an independent community landing page and is not affiliated with or endorsed by Telegram, Meta, Facebook, or any other platform. Information and content shared through the community are provided for general informational and entertainment purposes only. Please make your own decisions and review information carefully.
+    </p>
+  </div>
+
+  <script>
+    // Reverse Timer Script (2 seconds loop/countdown example)
+    let totalSeconds = 2;
+
+    function updateTimer() {
+      let days = Math.floor(totalSeconds / (3600 * 24));
+      let hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+      let minutes = Math.floor((totalSeconds % 3600) / 60);
+      let seconds = totalSeconds % 60;
+
+      document.getElementById('days').innerText = String(days).padStart(2, '0');
+      document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+      document.getElementById('mins').innerText = String(minutes).padStart(2, '0');
+      document.getElementById('secs').innerText = String(seconds).padStart(2, '0');
+
+      if (totalSeconds > 0) {
+        totalSeconds--;
+      } else {
+        totalSeconds = 2; // Timer reset/stay
+      }
+    }
+
+    setInterval(updateTimer, 1000);
+  </script>
+
+</body>
+</html>
